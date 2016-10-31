@@ -19,6 +19,6 @@ def get_capacity_dell_ups():
    return "error"
 
 if __name__ == "__main__":
-main()
+    main()
 
 
