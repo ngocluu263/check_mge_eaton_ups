@@ -6,7 +6,7 @@ import subprocess
 
 def main():
    dell_c = get_capacity_dell_ups()
-   if dell_c == "100":
+   if int(dell_c) == 100:
       print "OK"
    else:
       print "NG"
