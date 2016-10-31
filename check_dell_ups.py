@@ -1,41 +1,24 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- 
 
-import optparse
-import sys
-
-from pysnmp.entity.rfc3413.oneliner import cmdgen
+import subprocess
 
 from pysnmp.hlapi import *
 
 
 def main():
-	try:
-		# Starting check_mge_eaton_ups.py
-		iterator = getCmd(SnmpEngine(),
-						  CommunityData('public'),
-						  UdpTransportTarget(('172.16.4.71', 161)),
-						  ContextData(),
-						  ObjectType(ObjectIdentity('SNMPv2-MIB', '1.3.6.1.2.1.33.1.2.4.0', 0)))
+    print "AAA"
 
-		errorIndication, errorStatus, errorIndex, varBinds = next(iterator)
 
-		if errorIndication:  # SNMP engine errors
-			print(errorIndication)
-		else:
-			if errorStatus:  # SNMP agent errors
-				print('%s at %s' % (errorStatus.prettyPrint(), varBinds[int(errorIndex)-1] if errorIndex else '?'))
-			else:
-				for varBind in varBinds:  # SNMP response contents
-					print(' = '.join([x.prettyPrint() for x in varBind]))
-
-	except IOError, msg:
-		raise
-	except Exception, msg:
-		raise
-
+def get_capacity_dell_ups():
+ try:
+     cmd = ["snmpwalk", "-c", "public", "-v", "1","172.16.4.71","1.3.6.1.2.1.33.1.2.4.0 -O q -O v"]
+     dell_capacity = subprocess.check_output(cmd, shell=False, stderr=subprocess.STDOUT)
+     return dell_capacity.strip('\n')
+ except:
+   return "error"
 
 if __name__ == "__main__":
-	main()
+main()
 
 
