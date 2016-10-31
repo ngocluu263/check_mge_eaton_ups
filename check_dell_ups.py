@@ -5,9 +5,13 @@ import subprocess
 
 
 def main():
-   dell_c = get_capacity_dell_ups()
-   if int(dell_c) == 100:
+   dell_c = int(get_capacity_dell_ups())
+
+   if dell_c == 100:
       print "OK"
+   elif dell_c <= 20:
+      print "Send mail"
+      print "Shutdown servers"
    else:
       print "NG"
 
