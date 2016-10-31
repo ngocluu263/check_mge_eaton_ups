@@ -185,7 +185,7 @@ def main():
 			# no service is set, exit
 			nagiosOutput(3, "No service is choosen. For help -h")
 
-		getSNMP(options.host, options.community, options.option)
+		print getSNMP(options.host, options.community, options.option)
 
 	except IOError, msg:
 		nagiosOutput(3, "IOError")
