@@ -18,7 +18,7 @@ def serviceOID(service):
 
 	# servicename, oid, min- and maxvalues, failurecode and error message
 	service2oid = {('battery_remainingtime'):{'oid':'1.3.6.1.4.1.705.1.5.1.0', 'min':1200, 'statusmsg':'Battery Remainingtime under 20min'},
-		('battery_level'):{'oid':'1.3.6.1.4.1.705.1.5.2.0', 'min':60, 'statusmsg':'Battery level under 60 percent'},
+		('battery_level'):{'oid':'1.3.6.1.2.1.33.1.2.4.0', 'min':60, 'statusmsg':'Battery level under 60 percent'},
 		('battery_voltage'):{'oid':'1.3.6.1.4.1.705.1.5.2.0', 'min':60, 'statusmsg':'Battery Voltage under 60V'},
 		('output_load'):{'oid':'1.3.6.1.4.1.705.1.7.2.1.4.1', 'max':95, 'statusmsg':'Output overload'}
 	}
