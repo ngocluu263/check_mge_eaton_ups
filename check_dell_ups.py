@@ -3,11 +3,9 @@
 
 import subprocess
 
-from pysnmp.hlapi import *
-
 
 def main():
-    print "AAA"
+   print get_capacity_dell_ups()
 
 
 def get_capacity_dell_ups():
