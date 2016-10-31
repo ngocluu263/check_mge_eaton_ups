@@ -9,9 +9,11 @@ def main():
 
    if dell_c == 100:
       print "OK"
+      print dell_c
    elif dell_c <= 20:
       print "Send mail"
       print "Shutdown servers"
+      print dell_c
    else:
       print "NG"
 
