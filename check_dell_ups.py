@@ -7,21 +7,22 @@ from libsmtp import *
 upsInputVoltage = "1.3.6.1.2.1.33.1.3.3.1.3.1"
 upsOutputVoltage = "1.3.6.1.2.1.33.1.4.4.1.2.1"
 upsCapacity = "1.3.6.1.2.1.33.1.2.4.0"
-upsBatteryVoltage = "1.3.6.1.2.1.33.1.2.5.0"
+upsBatteryLoad = "1.3.6.1.2.1.33.1.2.4.0"
 IP = "172.16.4.71"
 community = "public"
 
 
 def main():
-   Capacity = int(get_info_ups(IP, community, upsCapacity))
+
    InputVoltage = int(get_info_ups(IP, community, upsInputVoltage))
    OutputVoltage = int(get_info_ups(IP, community, upsOutputVoltage))
-   BatteryVoltage = int(get_info_ups(IP, community, upsBatteryVoltage))
+   Capacity = int(get_info_ups(IP, community, upsCapacity))
+   BatteryLoad = int(get_info_ups(IP, community, upsBatteryLoad))
 
    print ("Capacity: %s " % Capacity)
    print ("InputVoltage: %s " % InputVoltage)
    print ("OutputVoltage: %s " % OutputVoltage)
-   print ("BypassVoltage: %s " % BatteryVoltage)
+   print ("BatteryLoad: %s " % BatteryLoad)
 
    if Capacity == 100:
       print "OK"
