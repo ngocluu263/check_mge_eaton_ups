@@ -16,9 +16,9 @@ def main():
    InputVoltage = int(get_info_ups(IP, community, upsInputVoltage))
    BypassVoltage = int(get_info_ups(IP, community, upsBypassVoltage))
 
-   print Capacity
-   print InputVoltage
-   print BypassVoltage
+   print ("Capacity: %s " % Capacity)
+   print ("InputVoltage: %s " % InputVoltage)
+   print ("BypassVoltage: %s " % BypassVoltage)
 
    if Capacity == 100:
       print "OK"
