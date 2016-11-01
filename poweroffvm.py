@@ -146,7 +146,7 @@ def main():
          if vm.name in vmnames:
             print (vm.name)
             if vm.name == "172.16.4.107_CentOS7.1_HA02":
-              tasks = vm.PowerOff()
+              tasks = vm.ShutdownGuest()
               # Wait for power on to complete
               WaitForTasks(tasks, si)
               print ("commplete")
