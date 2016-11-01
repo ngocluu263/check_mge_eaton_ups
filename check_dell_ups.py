@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*- 
 
 import subprocess
+from libsmtp import *
 
 
 def main():
@@ -10,8 +11,11 @@ def main():
    if dell_c == 100:
       print "OK"
       print dell_c
+      print "Send mail"
+      send_mail("UPS low capacity", dell_c)
    elif dell_c <= 20:
       print "Send mail"
+      send_mail("UPS low capacity", dell_c)
       print "Shutdown servers"
       print dell_c
    else:
