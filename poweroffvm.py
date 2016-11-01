@@ -137,13 +137,14 @@ def main():
                                                         [vim.VirtualMachine],
                                                         True)
       vmList = objView.view
+      print (vmList)
       objView.Destroy()
 
       # Find the vm and power it on
-      tasks = [vm.PowerOn() for vm in vmList if vm.name in vmnames]
+      #tasks = [vm.PowerOn() for vm in vmList if vm.name in vmnames]
 
       # Wait for power on to complete
-      WaitForTasks(tasks, si)
+      #WaitForTasks(tasks, si)
 
       print("Virtual Machine(s) have been powered on successfully")
    except vmodl.MethodFault as e:
