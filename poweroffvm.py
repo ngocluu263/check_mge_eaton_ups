@@ -145,8 +145,11 @@ def main():
       for vm in vmList:
          if vm.name in vmnames:
             print (vm.name)
-      # Wait for power on to complete
-      #WaitForTasks(tasks, si)
+            if vm.name == "172.16.4.107_CentOS7.1_HA02":
+              tasks = vm.PowerOff()
+              # Wait for power on to complete
+              WaitForTasks(tasks, si)
+              print ("commplete")
 
       print("Virtual Machine(s) have been powered on successfully")
    except vmodl.MethodFault as e:
