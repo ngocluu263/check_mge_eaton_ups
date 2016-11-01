@@ -12,18 +12,23 @@ community = "public"
 
 
 def main():
+   Capacity = int(get_info_ups(IP, community, upsCapacity))
+   InputVoltage = int(get_info_ups(IP, community, upsInputVoltage))
+   BypassVoltage = int(get_info_ups(IP, community, upsBypassVoltage))
 
-   dell_c = int(get_info_ups(IP, community, upsCapacity))
-   if dell_c == 100:
+   print Capacity
+   print InputVoltage
+   print BypassVoltage
+
+   if Capacity == 100:
       print "OK"
-      print dell_c
       print "Send mail"
-      send_mail("UPS low capacity", dell_c)
-   elif dell_c <= 20:
+      #send_mail("UPS low capacity", dell_c)
+   elif Capacity <= 20:
       print "Send mail"
-      send_mail("UPS low capacity", dell_c)
+      #send_mail("UPS low capacity", dell_c)
       print "Shutdown servers"
-      print dell_c
+      print Capacity
    else:
       print "NG"
 
