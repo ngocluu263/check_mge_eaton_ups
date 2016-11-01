@@ -142,7 +142,9 @@ def main():
 
       # Find the vm and power it on
       #tasks = [vm.PowerOn() for vm in vmList if vm.name in vmnames]
-
+      for vm in vmList:
+         if vm.name in vmnames:
+            print (vm.name)
       # Wait for power on to complete
       #WaitForTasks(tasks, si)
 
